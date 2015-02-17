@@ -1,0 +1,113 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+/* 
+ * Paralax Effect
+ *
+ */
+
+.parallax {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 1px;
+}
+
+.parallax__group {
+    position: relative;
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    transform-style: preserve-3d;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.parallax__layer--fore {
+    transform: translateZ(90px) scale(.7);
+    z-index: 1;
+}
+
+.parallax__layer--base {
+    transform: translateZ(0);
+    z-index: 4;
+}
+
+.parallax__layer--back {
+    transform: translateZ(-300px) scale(2);
+    z-index: 3;
+}
+
+.parallax__layer--deep {
+    transform: translateZ(-600px) scale(3);
+    z-index: 2;
+}
+
+/* 
+ * Page Rules
+ *
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lobster', cursive;
+    overflow: hidden;
+    color: #fff;
+    text-shadow: 2px 2px 2px rgba(0,0,0,.5);
+}
+
+.parallax{
+    font-size: 500%;
+}
+
+.parallax__layer {
+    text-align: center;
+}
+
+#group1 {
+    z-index: 5;
+}
+
+#group2 {
+    z-index: 4;
+}
+
+#group3 {
+    z-index: 5;
+}
+
+#group1 .parallax__layer {
+    background: url('http://www.hdwallpapers.in/walls/cloudy_sky-wide.jpg');
+    background-size: cover;
+    box-shadow: 0 0 40px rgba(0,0,0,.5);
+}
+
+#group2 .parallax__layer--back {
+    background-image: url('http://www.freewallpaperwep.com/wp-content/uploads/ktz/rest-on-the-beach-wallpaper-hd-2y5h9oycixtgggd3f2zkei.jpeg');
+    background-size: cover;
+}
+
+#group3 .parallax__layer {
+    background-image: url('http://wallpapers55.com/wp-content/uploads/2013/11/hd-wallpaper-beach-hd.jpeg');
+    background-size: cover;
+}
+
+.title {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
